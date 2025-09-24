@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Mahindra Personalisation App - Customize your comfort kit with bespoke embroidery"
+    />
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
+
+    <!-- CSP hardened, no redirects in JS, allow nonce for inline script -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'nonce-secure123'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; media-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self';">
+
+    <!-- Anti-Clickjack: keep page hidden if framed (no redirect) -->
+    <style id="antiClickjack">html { display: none !important; }</style>
+    <script nonce="secure123">
+      (function() {
+        'use strict';
+        try {
+          if (self === top) {
+            var antiClickjack = document.getElementById('antiClickjack');
+            if (antiClickjack && antiClickjack.parentNode) {
+              antiClickjack.parentNode.removeChild(antiClickjack);
+            }
+          } else {
+            // Intentionally do not redirect to avoid DOM open redirect
+            // Page stays hidden by the antiClickjack style when framed
+          }
+        } catch (e) {
+          var fallback = document.getElementById('antiClickjack');
+          if (fallback && fallback.parentNode) {
+            fallback.parentNode.removeChild(fallback);
+          }
+        }
+      })();
+    </script>
+
+    <!-- Fonts (from env variables) -->
+    <link href="%REACT_APP_FONTS_CINZEL%" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="%REACT_APP_FONTS_MAIN%" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="%REACT_APP_FONTS_EXTENDED%" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Fallback fonts for noscript -->
+    <noscript>
+      <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important; }
+      </style>
+    </noscript>
+
+    <title>Mahindra Personalisation App</title>
+  </head>
+  <body class="font-loading">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  </html>
+
